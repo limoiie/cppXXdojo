@@ -7,7 +7,10 @@ find_package(GTest CONFIG REQUIRED)
 
 add_executable(cpp20dojo
     main.cpp
-    promise-future/case01.cpp)
+    1000-promise-future/case01.cpp
+    1001-packaged-tasks/case01.cpp
+    )
+
 target_link_libraries(cpp20dojo
     GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
 
