@@ -6,6 +6,31 @@
 #include "../utils.h"
 
 /**
+ * The class template std::promise provides a facility to store a value
+ * or an exception that is later acquired asynchronously via a std::future
+ * object created by the std::promise object. Note that the std::promise
+ * object is meant to be used only once.
+ *
+ * Each promise is associated with a shared state, which contains some
+ * state information and a result which may be not yet evaluated, evaluated
+ * to a value (possibly void) or evaluated to an exception. A promise may
+ * do three things with the shared state:
+ *   - make ready: the promise stores the result or the exception in the
+ *       shared state. Marks the state ready and unblocks any thread waiting
+ *       on a future associated with the shared state.
+ *   - release: the promise gives up its reference to the shared state. If
+ *       this was the last such reference, the shared state is destroyed.
+ *       Unless this was a shared state created by std::async which is not
+ *       yet ready, this operation does not block.
+ *   - abandon: the promise stores the exception of type std::future_error
+ *       with error code std::future_errc::broken_promise, makes the shared
+ *       state ready, and then releases it.
+ *
+ * reference from https://en.cppreference.com/w/cpp/thread/promise
+ * reference from https://en.cppreference.com/w/cpp/thread/future
+ */
+
+/**
  * Set a value for the promise in the other working thread
  */
 TEST(TestPromiseFuture, test_promise) { // NOLINT(cert-err58-cpp)

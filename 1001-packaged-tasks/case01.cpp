@@ -5,8 +5,14 @@
 
 #include "../utils.h"
 
-/*
- * std::packaged_task encapsulates std::function with std::promise
+/**
+ * The class template std::packaged_task wraps any Callable target
+ * (function, lambda expression, bind expression, or another function
+ * object) so that it can be invoked asynchronously. Its return value
+ * or exception thrown is stored in a shared state which can be
+ * accessed through std::future objects.
+ *
+ * reference from https://en.cppreference.com/w/cpp/thread/packaged_task
  */
 
 static int computing(int const age, std::string const& times) {
