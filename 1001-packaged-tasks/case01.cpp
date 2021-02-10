@@ -17,7 +17,7 @@
 
 static int computing(int const age, std::string const& times) {
     fake_costly_computing();
-    return age * atoi(times.c_str());
+    return age * std::strtol(times.c_str(), nullptr, 10);
 }
 
 /**
@@ -61,7 +61,7 @@ TEST(TestPackagedTask, test_lambda_task) { // NOLINT(cert-err58-cpp)
     std::packaged_task<int(int, std::string)> task(
             [](int const age, std::string const& delta) {
                 fake_costly_computing();
-                return age + atoi(delta.c_str());
+                return age + std::strtol(delta.c_str(), nullptr, 10);
             });
     auto fut = task.get_future();
 

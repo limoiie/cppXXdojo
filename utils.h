@@ -9,9 +9,9 @@
 #include <thread>
 
 inline
-void fake_costly_computing() {
-    for (auto const i : {1, 2, 3}) {
-        std::cout << "computing " << i << std::endl;
+void fake_costly_computing(int const seconds = 3) {
+    for (auto i = 0; [[maybe_unused]] auto const _ : std::vector<int>(seconds, 1)) {
+        std::cout << "computing " << i++ << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }

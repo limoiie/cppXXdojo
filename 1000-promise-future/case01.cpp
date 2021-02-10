@@ -68,3 +68,54 @@ TEST(TestPromiseFuture, test_promise_set_at_thread_exit) { // NOLINT(cert-err58-
 
     worker_thread.join();
 }
+
+TEST(TestPromiseFuture, test_promise_wait) { // NOLINT(cert-err58-cpp)
+    std::cout << "Testing " <<  __PRETTY_FUNCTION__ << " ..." << std::endl;
+
+    auto promise = std::promise<int>();
+    auto future = promise.get_future();
+    auto worker_thread = std::thread([](std::promise<int> p) {
+        fake_costly_computing(4);
+        p.set_value(10);
+    }, std::move(promise));
+
+    std::cout << "waiting " << std::endl;
+    // wait() will block the current thread until set_value in working thread
+    future.wait();
+    std::cout << "get the value - " << future.get() << std::endl;
+
+    worker_thread.join();
+}
+
+TEST(TestPromiseFuture, test_promise_wait_for) { // NOLINT(cert-err58-cpp)
+    std::cout << "Testing " <<  __PRETTY_FUNCTION__ << " ..." << std::endl;
+
+    auto promise = std::promise<int>();
+    auto future = promise.get_future();
+    auto worker_thread = std::thread([](std::promise<int> p) {
+        fake_costly_computing(4);
+        p.set_value(10);
+    }, std::move(promise));
+
+    auto const waiting_duration = std::chrono::seconds(2);
+    while (true) {
+        std::cout << "waiting " << waiting_duration.count() << "s" << std::endl;
+        switch (future.wait_for(waiting_duration)) {
+            case std::future_status::ready:
+                std::cout << "  ready: get the value - "
+                          << future.get() << std::endl;
+                break;
+            case std::future_status::timeout:
+                std::cout << "  timeout: need to wait more time"
+                          << std::endl;
+                continue;
+            case std::future_status::deferred:
+                std::cout << "  deferred: compute now and get the value - "
+                          << future.get() << std::endl;
+                break;
+        }
+        break;
+    }
+
+    worker_thread.join();
+}
