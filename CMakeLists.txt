@@ -7,6 +7,7 @@ find_package(GTest CONFIG REQUIRED)
 
 add_executable(cpp20dojo
     main.cpp
+    0950-cxx11-bind/case01.cpp
     1000-cxx11-promise-future/case01.cpp
     1001-cxx11-packaged-tasks/case01.cpp
     )
