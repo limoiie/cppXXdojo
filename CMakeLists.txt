@@ -10,6 +10,7 @@ add_executable(cpp20dojo
     0950-cxx11-bind/case01.cpp
     1000-cxx11-promise-future/case01.cpp
     1001-cxx11-packaged-tasks/case01.cpp
+    1050-cxx11-async-launch/case01.cpp
     )
 
 target_link_libraries(cpp20dojo
