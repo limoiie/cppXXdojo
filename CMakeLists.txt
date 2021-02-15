@@ -21,7 +21,7 @@ add_executable(cpp20dojo
     1050-cxx11-async-launch/case01.cpp
     2000-cxx20-concepts/case01-basics.cpp
     2020-cxx20-ranges/case01-basics.cpp
-    0600-general-utilities-library/0602-cxx11-pair-tuple/case01-pair-tuple.cpp 0600-general-utilities-library/0608-cxx11-tie/case01.cpp)
+    0600-general-utilities-library/0602-cxx11-pair-tuple/case01-pair-tuple.cpp 0600-general-utilities-library/0608-cxx11-tie/case01.cpp 0800-cxx17-declaration-structured-binding/case01.cpp)
 
 target_link_libraries(cpp20dojo
     GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
