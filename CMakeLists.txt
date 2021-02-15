@@ -10,12 +10,18 @@ find_package(GTest CONFIG REQUIRED)
 
 add_executable(cpp20dojo
     main.cpp
+    0600-general-utilities-library/0610-cxx17-optional-any-variant/case01-optional.cpp
+    0600-general-utilities-library/0610-cxx17-optional-any-variant/case02-any.cpp
+    0600-general-utilities-library/0610-cxx17-optional-any-variant/case03-variant.cpp
     0920-cxx11-thread/case01.cpp
+    0921-cxx20-jthread/case01.cpp
     0950-cxx11-bind/case01.cpp
     1000-cxx11-promise-future/case01.cpp
     1001-cxx11-packaged-tasks/case01.cpp
     1050-cxx11-async-launch/case01.cpp
-    0921-cxx20-jthread/case01.cpp 2000-cxx20-concepts/case01-basics.cpp 2020-cxx20-ranges/case01-basics.cpp)
+    2000-cxx20-concepts/case01-basics.cpp
+    2020-cxx20-ranges/case01-basics.cpp
+    )
 
 target_link_libraries(cpp20dojo
     GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
