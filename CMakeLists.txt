@@ -10,9 +10,12 @@ find_package(GTest CONFIG REQUIRED)
 
 add_executable(cpp20dojo
     main.cpp
-    0600-general-utilities-library/0620-cxx17-optional-any-variant/case01-optional.cpp
-    0600-general-utilities-library/0620-cxx17-optional-any-variant/case02-any.cpp
-    0600-general-utilities-library/0620-cxx17-optional-any-variant/case03-variant.cpp
+    0600-0799-general-utilities-library/0602-cxx11-pair-tuple/case01-pair-tuple.cpp
+    0600-0799-general-utilities-library/0608-cxx11-tie/case01.cpp
+    0600-0799-general-utilities-library/0620-cxx17-optional-any-variant/case01-optional.cpp
+    0600-0799-general-utilities-library/0620-cxx17-optional-any-variant/case02-any.cpp
+    0600-0799-general-utilities-library/0620-cxx17-optional-any-variant/case03-variant.cpp
+    0800-cxx17-declaration-structured-binding/case01.cpp
     0920-cxx11-thread/case01.cpp
     0921-cxx20-jthread/case01.cpp
     0950-cxx11-bind/case01.cpp
@@ -21,7 +24,7 @@ add_executable(cpp20dojo
     1050-cxx11-async-launch/case01.cpp
     2000-cxx20-concepts/case01-basics.cpp
     2020-cxx20-ranges/case01-basics.cpp
-    0600-general-utilities-library/0602-cxx11-pair-tuple/case01-pair-tuple.cpp 0600-general-utilities-library/0608-cxx11-tie/case01.cpp 0800-cxx17-declaration-structured-binding/case01.cpp)
+    )
 
 target_link_libraries(cpp20dojo
     GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
