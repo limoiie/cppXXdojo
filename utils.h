@@ -1,9 +1,5 @@
-//
-// Created on 2021/2/9.
-//
-
-#ifndef CPP20DOJO__UTILS_H_
-#define CPP20DOJO__UTILS_H_
+#ifndef CPP_XX_DOJO_UTILS_H_
+#define CPP_XX_DOJO_UTILS_H_
 
 #include <iostream>
 #include <thread>
@@ -16,4 +12,4 @@ void fake_costly_computing(int const seconds = 3) {
     }
 }
 
-#endif //CPP20DOJO__UTILS_H_
+#endif //CPP_XX_DOJO_UTILS_H_

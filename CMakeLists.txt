@@ -4,7 +4,7 @@ project(cpp20dojo)
 set(CMAKE_CXX_STANDARD 20)
 
 # -fcoroutines is required by header <coroutine>
-set(CMAKE_CXX_FLAGS "-pthread -fcoroutines")
+set(CMAKE_CXX_FLAGS "-pthread")
 
 find_package(GTest CONFIG REQUIRED)
 

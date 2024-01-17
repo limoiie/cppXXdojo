@@ -15,11 +15,13 @@
  */
 TEST(TestTie, test_tie_to_upack_tuple) { // NOLINT(cert-err58-cpp)
     std::cout << "Testing " << __PRETTY_FUNCTION__ << " ..." << std::endl;
+
     auto id = 0;
     auto gpa = 0.0;
     auto grade = ' ';
 
     auto student = std::make_tuple(1, "Lisa Barren", 3.8, 'A');
+
     // you can skip some fields by replacing with std::ignore
     std::tie(id, std::ignore, gpa, grade) = student;
 

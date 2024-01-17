@@ -25,7 +25,7 @@ TEST(TestJthread, test_jthread) { // NOLINT(cert-err58-cpp)
 
     auto _ = std::jthread (foo);
     // It's totally fine without calling join() or detach(). In fact, this
-    // thread will automatically rejoins on destruction
+    // thread will automatically rejoin on destruction
 }
 
 /**
