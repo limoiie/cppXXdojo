@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <thread>
 
 #include <gtest/gtest.h>
 
