@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-#include "../utils.h"
+#include "../../../utils.h"
 
 /**
  * The function template async runs the function f asynchronously (potentially in

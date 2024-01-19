@@ -4,7 +4,7 @@
 
 #include <gtest/gtest.h>
 
-#include "../utils.h"
+#include "../../../utils.h"
 
 /**
  * The class jthread represents a single thread of execution. It has the same
