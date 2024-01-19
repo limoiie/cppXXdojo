@@ -26,6 +26,10 @@ add_executable(cppXXdojo
         src/cpp20/modules/module_a.cpp
         src/cpp20/modules/case01-basics.cpp
         src/cpp20/ranges/case01-basics.cpp
+        src/cpp20/ranges/case02-creation.cpp
+        src/cpp20/ranges/case03-adaptors.cpp
+        src/cpp20/ranges/case04-concepts.cpp
+        src/cpp20/ranges/case05-custom-view.cpp
 )
 
 target_link_libraries(cppXXdojo
@@ -117,6 +121,10 @@ add_executable(cpp20dojo
         src/cpp20/modules/case01-basics.cpp
         src/cpp20/modules/module_a.cpp
         src/cpp20/ranges/case01-basics.cpp
+        src/cpp20/ranges/case02-creation.cpp
+        src/cpp20/ranges/case03-adaptors.cpp
+        src/cpp20/ranges/case04-concepts.cpp
+        src/cpp20/ranges/case05-custom-view.cpp
 )
 
 set_target_properties(cpp20dojo PROPERTIES
